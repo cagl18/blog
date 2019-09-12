@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import actions from '../actions';
+// import actions from '../actions';
 
 class UserHeader extends Component {
-  componentDidMount() {
-    //check if user is in state
-
-    //else fetch user from api endpoint
-    this.props.fetchUser(this.props.userId);
-  }
+  //   componentDidMount() {
+  //     // this.props.fetchUser(this.props.userId);
+  //   }
 
   render() {
     const { user } = this.props;
@@ -22,13 +19,10 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchUser: userId => dispatch(actions.fetchUser(userId))
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchUser: userId => dispatch(actions.fetchUser(userId))
+//   };
+// };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UserHeader);
+export default connect(mapStateToProps)(UserHeader);
